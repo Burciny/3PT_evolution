@@ -16,7 +16,7 @@ chitest_trimer_3p_1 <- read_delim("../../data/chitest_trimer_3p_1",
 chitest_trimer_3p_1$forward<- factor(chitest_trimer_3p_1$forward, levels = levels(reorder(chitest_trimer_3p_1$forward, chitest_trimer_3p_1$p_val)))
 trimers_3p_1<-levels(chitest_trimer_3p_1$forward)
 
-pdf("../../../suppfigures/FigS1A.pdf", width = 8, height = 5)
+pdf("FigS1A.pdf", width = 8, height = 5)
 
 plot(1:64,chitest_trimer_3p_1$p_val[order(chitest_trimer_3p_1$p_val)], xlab = "Trimers", ylab = "p-values", xaxt="n", col="gray48",pch=16)
 axis(1, at=1:64, labels = FALSE)
@@ -34,7 +34,7 @@ for (i in 1:length(trimers_3p_1)) {
 }
 CI_3p_trimer_ro<- CI_3p_trimer[idx,]
 
-pdf("../../../suppfigures/FigS1B.pdf", width = 8, height = 5)
+pdf("FigS1B.pdf", width = 8, height = 5)
 
 plot(1:64, CI_3p_trimer_ro$Upper, type="l", xlab = "Trimers", ylab = "Confidence Intervals", xaxt="n")
 lines(1:64, CI_3p_trimer_ro$Lower)
@@ -58,7 +58,7 @@ y=c(0,1/(1:(M-1))+1/((M-1):1),0)
 HM=c(1/(1:(M-1))+1/((M-1):1))
 y=y/sum(y)
 
-postscript("../../../suppfigures/FigS2.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 10, height = 4, colormodel = "cmyk")
+postscript("FigS2.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 10, height = 4, colormodel = "cmyk")
 
 par(mfrow=c(1,2))
 plot(1:195, SFSauto_mel196$SIasymm[2:M]/sum(SFSauto_mel196$SIasymm[2:M]),pch=4, xlab = "Frequency",ylab = "Probability", main = "A", ylim = c(0,0.22))
@@ -82,7 +82,7 @@ asymmetry_trimers_X$forward<- factor(asymmetry_trimers_X$forward, levels = level
 
 asymmetry_trimers_X_long<- gather(asymmetry_trimers_X[,1:4], key="Region",value="value",3:4)
 
-postscript("../../../suppfigures//FigS3A.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
+postscript("FigS3A.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
 ggplot(asymmetry_trimers_X_long, aes(x=forward, y=value*100, shape=Region))+geom_point()+
   theme(axis.text.x = element_text(size=8, angle=90), legend.position = c(0.07,0.89), legend.title = element_blank(),
         panel.background = element_rect(fill = "white", colour="black"),
@@ -97,7 +97,7 @@ CI_Dmel_trimer_gamma_X <- read_delim("../../data/CI_Dmel_trimer_gamma_X",
                                    trim_ws = TRUE)
 
 
-postscript("../../../suppfigures/FigS3B.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
+postscript("FigS3B.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
 ggplot(CI_Dmel_trimer_gamma_X, aes(x=reorder(motif, gamma), y=gamma))+geom_point()+
   theme(axis.text.x = element_text(size=8, angle=90),
         panel.background = element_rect(fill = "white", colour="black"),
@@ -116,7 +116,7 @@ asymmetry_dimers <- read_delim("../../data/asymmetry_dimers",
 asymmetry_dimers$forward<- factor(asymmetry_dimers$forward, levels = levels(reorder(asymmetry_dimers$forward, asymmetry_dimers$`3'-region`)))
 asymmetry_dimers_long<- gather(asymmetry_dimers[,1:4], key="Region",value="value",3:4)
 
-postscript("../../../suppfigures//FigS4A.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
+postscript("FigS4A.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
 ggplot(asymmetry_dimers_long, aes(x=forward, y=value*100, shape=Region))+geom_point()+
   theme(axis.text.x = element_text(size=8, angle=90), legend.position = c(0.07,0.89), legend.title = element_blank(),
         panel.background = element_rect(fill = "white", colour="black"),
@@ -133,7 +133,7 @@ asymmetry_tetramers <- read_delim("../../data/asymmetry_tetramers",
 asymmetry_tetramers$forward<- factor(asymmetry_tetramers$forward, levels = levels(reorder(asymmetry_tetramers$forward, asymmetry_tetramers$`3'-region`)))
 asymmetry_tetramers_long<- gather(asymmetry_tetramers[,1:4], key="Region",value="value",3:4)
 
-postscript("../../../suppfigures//FigS4B.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
+postscript("FigS4B.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
 ggplot(asymmetry_tetramers_long, aes(x=forward, y=value*100, shape=Region))+geom_point()+
   theme(axis.text.x = element_text(size=8, angle=90), legend.position = c(0.07,0.89), legend.title = element_blank(),
         panel.background = element_rect(fill = "white", colour="black"),
@@ -149,7 +149,7 @@ CI_Dmel_dimers <- read_delim("../../data/CI_Dmel_dimers",
                                      trim_ws = TRUE)
 
 
-postscript("../../../suppfigures/FigS4C.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
+postscript("FigS4C.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
 ggplot(CI_Dmel_dimers, aes(x=reorder(motif, gamma), y=gamma))+geom_point()+
   theme(axis.text.x = element_text(size=8, angle=90),
         panel.background = element_rect(fill = "white", colour="black"),
@@ -164,7 +164,7 @@ CI_Dmel_tetramers <- read_delim("../../data/CI_Dmel_tetramers",
                              trim_ws = TRUE)
 
 
-postscript("../../../suppfigures/FigS4D.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
+postscript("FigS4D.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
 ggplot(CI_Dmel_tetramers, aes(x=reorder(motif, gamma), y=gamma))+geom_point()+
   theme(axis.text.x = element_text(size=8, angle=90),
         panel.background = element_rect(fill = "white", colour="black"),
@@ -187,7 +187,7 @@ tetramers_ordered <- read_delim("../../data/tetramers_ordered",
                                 "\t", escape_double = FALSE, trim_ws = TRUE)
 
 dimers_ordered$gamma[dimers_ordered$motif=="AG"]
-postscript("../../../suppfigures/FigS5.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
+postscript("FigS5.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
 par(mfrow=c(1,3))
 hist(dimers_ordered$gamma, xlab = "gamma", main ="Dimers", cex.axis=1.5, cex.lab=1.5, cex.main=1.5)
 points(x=dimers_ordered$gamma[dimers_ordered$motif=="AG"], y=1, col="blue", pch=16,cex=2) # AG
@@ -239,7 +239,7 @@ gammas_trimer_allnp0_complement$motif<- factor(gammas_trimer_allnp0_complement$m
 gammas_trimer_phase0_complement$motif<- factor(gammas_trimer_phase0_complement$motif, levels = levels(reorder(gammas_trimer_phase0_complement$motif, CI_Dmel_trimer_gamma$gamma)))
 gammas_trimer_np0_complement$motif<- factor(gammas_trimer_np0_complement$motif, levels = levels(reorder(gammas_trimer_np0_complement$motif, CI_Dmel_trimer_gamma$gamma)))
 
-postscript("../../../suppfigures/FigS6.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
+postscript("FigS6.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
 ggplot(CI_Dmel_trimer_gamma, aes(x=reorder(motif, gamma), y=gamma))+geom_point()+
   theme(axis.text.x = element_text(size=8, angle=90),
         panel.background = element_rect(fill = "white", colour="black"),
@@ -267,7 +267,7 @@ CI_Dsim_trimers <- read_delim("../../data/CI_Dsim_trimers",
                                            delim = "\t", escape_double = FALSE, 
                                            trim_ws = TRUE)
 
-postscript("../../../suppfigures/FigS7.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
+postscript("FigS7.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
 ggplot(CI_Dmel_trimer_gamma, aes(x=reorder(motif, gamma), y=gamma))+geom_point(aes(shape=16))+
   theme(axis.text.x = element_text(size=8, angle=90),
         panel.background = element_rect(fill = "white", colour="black"),
@@ -295,7 +295,7 @@ X_3PT_selcoeffs <- read_delim("../../data/X_gammaHIII_3PT_selcoeffs",
                                  delim = "\t", escape_double = FALSE, 
                                  trim_ws = TRUE)
 
-postscript("../../../suppfigures/FigS8.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
+postscript("FigS8.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
 
 plot(1:9, X_3PT_selcoeffs$sAG[1:9],type = "l", ylim = c(-6,1) ,xlab = "Focal position", ylab = "Gamma")
 points(1:9, X_3PT_selcoeffs$sAG[1:9], pch=16, cex=0.5)
@@ -337,7 +337,7 @@ deviation1to2$Base_i<- factor(deviation1to2$Base_i, levels = c("A","T","G","C"))
 deviation1to2$Base_j<- factor(deviation1to2$Base_j, levels = c("A","T","G","C"))
 
 
-postscript("../../../suppfigures/FigS9_1to2.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 9, height = 4, colormodel = "cmyk")
+postscript("FigS9_1to2.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 9, height = 4, colormodel = "cmyk")
 
 ggplot(deviation1to2,aes(x=Base_j,y=Base_i,fill=Deviation))+
   geom_tile()+
@@ -352,7 +352,7 @@ dev.off()
 deviation4to5$Base_i<- factor(deviation4to5$Base_i, levels = c("A","T","G","C"))
 deviation4to5$Base_j<- factor(deviation4to5$Base_j, levels = c("A","T","G","C"))
 
-postscript("../../../suppfigures/FigS9_4to5.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 9, height = 4, colormodel = "cmyk")
+postscript("FigS9_4to5.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 9, height = 4, colormodel = "cmyk")
 
 ggplot(deviation4to5,aes(x=Base_j,y=Base_i,fill=Deviation))+
   geom_tile()+
@@ -367,7 +367,7 @@ dev.off()
 deviation8to9$Base_i<- factor(deviation8to9$Base_i, levels = c("A","T","G","C"))
 deviation8to9$Base_j<- factor(deviation8to9$Base_j, levels = c("A","T","G","C"))
 
-postscript("../../../suppfigures/FigS9_8to9.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 9, height = 4, colormodel = "cmyk")
+postscript("FigS9_8to9.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 9, height = 4, colormodel = "cmyk")
 
 ggplot(deviation8to9,aes(x=Base_j,y=Base_i,fill=Deviation))+
   geom_tile()+
@@ -390,7 +390,7 @@ seaurchin <- read_csv("../../data/8Eukaryoutes/lengths_seaurchin_woUTR", col_nam
 cerevisiae <- read_csv("../../data/8Eukaryoutes/intron_lengths_Scer", col_names = FALSE)
 kluyveri <- read_csv("../../data/8Eukaryoutes/intron_lengths_Skluyveri", col_names = FALSE)
 
-postscript("../../../suppfigures/FigS10_1.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
+postscript("FigS10_1.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
 
 par(mfrow=c(3,2))
 plot(density(log10(human$X1)), main="Human", xlab="log10(intron length)")
@@ -409,7 +409,7 @@ par(mfrow=c(1,1))
 
 dev.off()
 
-postscript("../../../suppfigures/FigS10_2.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 3, colormodel = "cmyk")
+postscript("FigS10_2.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 3, colormodel = "cmyk")
 
 par(mfrow=c(1,2))
 plot(density(log10(cerevisiae$X1)), main="S. cerevisiae", xlab="log10(intron length)")
@@ -423,7 +423,7 @@ basecomposition_cerevisiae <- read_delim("~/Documents/Project/3prime_ms/JEB/Repo
                                          delim = "\t", escape_double = FALSE, 
                                          trim_ws = TRUE)
 
-postscript("../../../suppfigures/FigS11_Scer.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
+postscript("FigS11_Scer.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
 
 plot(basecomposition_cerevisiae$positions, basecomposition_cerevisiae$A, type = "l", col="red",ylab="counts",xlab = "positions", main = "S.cerevisiae")
 lines(basecomposition_cerevisiae$positions, basecomposition_cerevisiae$T, col="purple")
@@ -437,7 +437,7 @@ basecomposition_thermo <- read_delim("~/Documents/Project/3prime_ms/JEB/Reposito
                                          delim = "\t", escape_double = FALSE, 
                                          trim_ws = TRUE)
 
-postscript("../../../suppfigures/FigS11_Lther.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
+postscript("FigS11_Lther.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
 plot(basecomposition_thermo$positions, basecomposition_thermo$A, type = "l", col="red",ylab="counts",xlab = "positions", main = "L. thermotolerans")
 lines(basecomposition_thermo$positions, basecomposition_thermo$T, col="purple")
 lines(basecomposition_thermo$positions, basecomposition_thermo$G, col="blue")
@@ -450,7 +450,7 @@ basecomposition_l200_moss <- read_delim("~/Documents/Project/3prime_ms/JEB/Repos
                                          delim = "\t", escape_double = FALSE, 
                                          trim_ws = TRUE)
 
-postscript("../../../suppfigures/FigS11_moss.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
+postscript("FigS11_moss.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
 plot(basecomposition_l200_moss$positions, basecomposition_l200_moss$A, type = "l", col="red",ylab="counts",xlab = "positions",main="Moss")
 lines(basecomposition_l200_moss$positions, basecomposition_l200_moss$T, col="purple")
 lines(basecomposition_l200_moss$positions, basecomposition_l200_moss$G, col="blue")
@@ -463,7 +463,7 @@ basecomposition_l500_su <- read_delim("~/Documents/Project/3prime_ms/JEB/Reposit
                                          delim = "\t", escape_double = FALSE, 
                                          trim_ws = TRUE)
 
-postscript("../../../suppfigures/FigS11_su.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
+postscript("FigS11_su.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
 plot(basecomposition_l500_su$positions[300:500], basecomposition_l500_su$A[300:500], type = "l", col="red",ylab="counts",xlab = "positions", main = "Sea Urchin")
 lines(basecomposition_l500_su$positions[300:500], basecomposition_l500_su$T[300:500], col="purple")
 lines(basecomposition_l500_su$positions[300:500], basecomposition_l500_su$G[300:500], col="blue")
@@ -477,7 +477,7 @@ basecomposition_l60_celegans <- read_delim("~/Documents/Project/3prime_ms/JEB/Re
                                          delim = "\t", escape_double = FALSE, 
                                          trim_ws = TRUE)
 
-postscript("../../../suppfigures/FigS11_ce.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
+postscript("FigS11_ce.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
 
 plot(basecomposition_l60_celegans$positions, basecomposition_l60_celegans$A, type = "l", col="red",ylab="counts",xlab = "positions", main="C. elegans")
 lines(basecomposition_l60_celegans$positions, basecomposition_l60_celegans$T, col="purple")
@@ -491,7 +491,7 @@ basecomposition_l90_at <- read_delim("~/Documents/Project/3prime_ms/JEB/Reposito
                                          delim = "\t", escape_double = FALSE, 
                                          trim_ws = TRUE)
 
-postscript("../../../suppfigures/FigS11_at.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
+postscript("FigS11_at.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
 
 plot(basecomposition_l90_at$positions, basecomposition_l90_at$A, type = "l", col="red",ylab="counts",xlab = "positions", main = "Arabidopsis")
 lines(basecomposition_l90_at$positions, basecomposition_l90_at$T, col="purple")
@@ -505,7 +505,7 @@ basecomposition_l90_human <- read_delim("~/Documents/Project/3prime_ms/JEB/Repos
                                          delim = "\t", escape_double = FALSE, 
                                          trim_ws = TRUE)
 
-postscript("../../../suppfigures/FigS11_human.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
+postscript("FigS11_human.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
 plot(basecomposition_l90_human$positions, basecomposition_l90_human$A, type = "l", col="red",ylab="counts",xlab = "positions", main="Human")
 lines(basecomposition_l90_human$positions, basecomposition_l90_human$T, col="purple")
 lines(basecomposition_l90_human$positions, basecomposition_l90_human$G, col="blue")
@@ -519,7 +519,7 @@ basecomposition_l90_rice <- read_delim("~/Documents/Project/3prime_ms/JEB/Reposi
                                          delim = "\t", escape_double = FALSE, 
                                          trim_ws = TRUE)
 
-postscript("../../../suppfigures/FigS11_rice.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
+postscript("FigS11_rice.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
 
 plot(basecomposition_l90_rice$positions, basecomposition_l90_rice$A, type = "l", col="red",ylab="counts",xlab = "positions", main = "Rice")
 lines(basecomposition_l90_rice$positions, basecomposition_l90_rice$T, col="purple")
@@ -596,7 +596,7 @@ sud<-ggplot(su, aes(x=forward, y=Asymmetry*100))+geom_point()+ylim(-100,100)+
         panel.grid.minor = element_line(colour = "grey90"),
         panel.grid.major = element_line(colour = "grey90"),axis.title.x = element_text(size=5),axis.title.y = element_text(size=5))+xlab("Dimers")+ylab("Asymmetry (%)")+ggtitle("Sea Urchin")
 
-postscript("../../../suppfigures/FigS12.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
+postscript("FigS12.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
 grid.arrange(humand, sud, riced, arabidopsisd, mossd, celegansd,cerevisiaed, therd,ncol=2)
 
 dev.off()
@@ -678,7 +678,7 @@ thermot<-ggplot(ther, aes(x=forward, y=Asymmetry*100, colour=category))+geom_poi
         panel.grid.major = element_line(colour = "grey90"), legend.position = "none", axis.title.x = element_text(size=5), axis.title.y = element_text(size=5))+
   xlab("Trimers")+ylab("Asymmetry (%)")+ggtitle("L. thermotolerans")
 
-postscript("../../../suppfigures/FigS13.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 6, colormodel = "cmyk")
+postscript("FigS13.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 6, colormodel = "cmyk")
 grid.arrange(humant, sut, ricet, arabidopsist, mosst, celeganst,cerevisiaet,thermot, ncol=2)
 
 dev.off()
