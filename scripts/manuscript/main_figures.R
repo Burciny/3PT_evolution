@@ -19,7 +19,7 @@ allcounts_170 <- read_delim("../../data/allcounts_170_A",
 allcounts_185 <- read_delim("../../data/allcounts_185_A", 
                             "\t", escape_double = FALSE, trim_ws = TRUE)
 
-postscript("../../../mainfigures/Fig2A.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 10, height = 3, colormodel = "cmyk")
+postscript("Fig2A.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 10, height = 3, colormodel = "cmyk")
 
 par(mfrow=c(1,3))
 plot(allcounts_155$position_155, allcounts_155$A, type = "l", col="red", xaxt="n", ylab = "counts", xlab = "position", main = "length 55")
@@ -46,7 +46,7 @@ axis(1, at=c(-50,-25,0,25,50,75,85,110,135), labels = c(-50,-25,0,25,50,75,0,25,
 par(mfrow=c(1,1))
 dev.off()
 
-postscript("../../../mainfigures/Fig2B.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 10, height = 3, colormodel = "cmyk")
+postscript("Fig2B.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 10, height = 3, colormodel = "cmyk")
 
 par(mfrow=c(1,3))
 
@@ -73,7 +73,7 @@ chitest_trimer_5p_1 <- read_delim("../../data/chitest_trimer_5p_1",
 chitest_trimer_5p_1$forward<- factor(chitest_trimer_5p_1$forward, levels = levels(reorder(chitest_trimer_5p_1$forward, chitest_trimer_5p_1$p_val)))
 trimers_1<-levels(chitest_trimer_5p_1$forward)
 
-pdf("../../../mainfigures/Fig4A.pdf", width = 8, height = 5)
+pdf("Fig4A.pdf", width = 8, height = 5)
 
 plot(1:64,chitest_trimer_5p_1$p_val[order(chitest_trimer_5p_1$p_val)], xlab = "Trimers", ylab = "p-values", xaxt="n", col="gray48",pch=16)
 axis(1, at=1:64, labels = FALSE)
@@ -90,7 +90,7 @@ for (i in 1:length(trimers_1)) {
 }
 CI_5p_trimer_ro<- CI_5p_trimer[idx,]
 
-pdf("../../../mainfigures/Fig4B.pdf", width = 8, height = 5)
+pdf("Fig4B.pdf", width = 8, height = 5)
 
 plot(1:64, CI_5p_trimer_ro$Upper, type="l", ylim = c(0.3, 2.1), xlab = "Trimers", ylab = "Confidence Intervals", xaxt="n")
 lines(1:64, CI_5p_trimer_ro$Lower)
@@ -176,18 +176,18 @@ p5_all<-p5+annotation_custom(ggplotGrob(p5_inset), xmin=12, xmax=23, ymin=-100, 
   annotate("text",x=18,y=-55,label=expression("Slope=1.843e-05, p-val=0.985"),colour="red")+  annotate("text",x=18,y=-65,label=expression("Slope=-0.000158, p-val=0.855"),colour="blue")
 p5_all
 
-postscript("../../../mainfigures/Fig5_5LR.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
+postscript("Fig5_5LR.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
 p5+annotation_custom(ggplotGrob(p5_inset), xmin=11, xmax=23, ymin=-100, ymax = -5)+
   annotate("text",x=18.2,y=-55,label=expression("Slope=1.843e-05, p-val=0.985"),colour="red")+  annotate("text",x=18.2,y=-65,label=expression("Slope=-0.000158, p-val=0.855"),colour="blue")
 
 dev.off()
 
-postscript("../../../mainfigures/Fig5_3PT.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
+postscript("Fig5_3PT.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
 p3+annotation_custom(ggplotGrob(p3_inset), xmin = 5, xmax = 10,ymin = -100, ymax = -5)+
   annotate("text",x=8,y=-50,label=expression("Slope=0.0420, p-val=1.541e-06"),colour="red")+  annotate("text",x=8.2,y=-60,label=expression("Slope=0.0414, p-val=0.0047"),colour="blue")
 dev.off()
 
-postscript("../../../mainfigures/Fig5_3junction.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
+postscript("Fig5_3junction.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
 p3_junction
 dev.off()
 
@@ -201,7 +201,7 @@ asymmetry_trimers_dro_obsexp$forward<- factor(asymmetry_trimers_dro_obsexp$forwa
 
 asymmetry_trimers_long<- gather(asymmetry_trimers_dro_obsexp[,1:4], key="Region",value="value",3:4)
 
-postscript("../../../mainfigures/Fig6A.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
+postscript("Fig6A.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
 ggplot(asymmetry_trimers_long, aes(x=forward, y=value*100, colour=Region))+geom_point()+
   theme(axis.text.x = element_text(size=8, angle=90), legend.position = c(0.07,0.89), legend.title = element_blank(),
         panel.background = element_rect(fill = "white", colour="black"),
@@ -221,7 +221,7 @@ sapply(asymmetry_trimers_df,class)
 asymmetry_trimers_df[,4:5]<- lapply(asymmetry_trimers_df[,4:5], function(x) {as.numeric(as.character(x))})
 asymmetry_trimers_df
 
-postscript("../../../mainfigures/Fig6B.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
+postscript("Fig6B.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
 ggplot(asymmetry_trimers_df, aes(x=expected*100, y=observed*100, colour=Region))+geom_point()+
   stat_smooth(method=lm)+theme(legend.position = c(0.07,0.89), legend.title = element_blank(),
                                panel.background = element_rect(fill = "white", colour="black"),
@@ -239,7 +239,7 @@ CI_Dmel_trimer_gamma <- read_delim("../../data/CI_Dmel_trimer_gamma",
                                    delim = "\t", escape_double = FALSE, 
                                    trim_ws = TRUE)
 
-postscript("../../../mainfigures/Fig7.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
+postscript("Fig7.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 4, colormodel = "cmyk")
 ggplot(CI_Dmel_trimer_gamma, aes(x=reorder(motif, gamma), y=gamma))+geom_point()+
   theme(axis.text.x = element_text(size=8, angle=90),
         panel.background = element_rect(fill = "white", colour="black"),
@@ -261,7 +261,7 @@ auto_3PT_selcoeffs <- read_delim("../../data/auto_gammaHIII_3PT_selcoeffs",
                                  trim_ws = TRUE)
 
 
-postscript("../../../mainfigures/Fig8.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
+postscript("Fig8.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 7, height = 5, colormodel = "cmyk")
 
 plot(1:9, auto_3PT_selcoeffs$sAG[1:9],type = "l", ylim = c(-3,1) ,xlab = "Focal position", ylab = "Gamma")
 points(1:9, auto_3PT_selcoeffs$sAG[1:9], pch=16, cex=0.5)
@@ -301,7 +301,7 @@ deviation8to9<- AllDeviationsJntCnt_autosome[AllDeviationsJntCnt_autosome$pos_i=
 deviation1to2$Base_i<- factor(deviation1to2$Base_i, levels = c("A","T","G","C"))
 deviation1to2$Base_j<- factor(deviation1to2$Base_j, levels = c("A","T","G","C"))
 
-postscript("../../../mainfigures/Fig9_1to2.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 9, height = 4, colormodel = "cmyk")
+postscript("Fig9_1to2.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 9, height = 4, colormodel = "cmyk")
 
 ggplot(deviation1to2,aes(x=Base_j,y=Base_i,fill=Deviation))+
   geom_tile()+
@@ -316,7 +316,7 @@ dev.off()
 deviation4to5$Base_i<- factor(deviation4to5$Base_i, levels = c("A","T","G","C"))
 deviation4to5$Base_j<- factor(deviation4to5$Base_j, levels = c("A","T","G","C"))
 
-postscript("../../../mainfigures//Fig9_4to5.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 9, height = 4, colormodel = "cmyk")
+postscript("Fig9_4to5.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 9, height = 4, colormodel = "cmyk")
 
 ggplot(deviation4to5,aes(x=Base_j,y=Base_i,fill=Deviation))+
   geom_tile()+
@@ -331,7 +331,7 @@ dev.off()
 deviation8to9$Base_i<- factor(deviation8to9$Base_i, levels = c("A","T","G","C"))
 deviation8to9$Base_j<- factor(deviation8to9$Base_j, levels = c("A","T","G","C"))
 
-postscript("../../../mainfigures//Fig9_8to9.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 9, height = 4, colormodel = "cmyk")
+postscript("Fig9_8to9.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 9, height = 4, colormodel = "cmyk")
 
 ggplot(deviation8to9,aes(x=Base_j,y=Base_i,fill=Deviation))+
   geom_tile()+
@@ -446,7 +446,7 @@ trimeroneplot<-ggplot(trimer_all, aes(x=forward, y=Asymmetry*100, colour=categor
   scale_shape_manual(values=seq(0,8))
 
 
-postscript("../../../mainfigures/Fig10.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 8, height = 6, colormodel = "cmyk")
+postscript("Fig10.eps",horizontal = FALSE, onefile = FALSE, paper = "special", width = 8, height = 6, colormodel = "cmyk")
 
 ggarrange(dimeroneplot, trimeroneplot, common.legend=TRUE, nrow = 2)
 
