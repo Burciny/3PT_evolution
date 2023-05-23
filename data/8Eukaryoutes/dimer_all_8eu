@@ -1,0 +1,129 @@
+forward	reverse	Asymmetry	species	kingdom
+AA	TT	-0.837243928736458	Human	Animal
+AC	GT	-0.196131619294728	Human	Animal
+AG	CT	-0.963286531461258	Human	Animal
+AT	AT	0	Human	Animal
+CA	TG	-0.323279130508046	Human	Animal
+CC	GG	0.836038146227204	Human	Animal
+CG	CG	0	Human	Animal
+CT	AG	0.963286531461258	Human	Animal
+GA	TC	-0.893584778582253	Human	Animal
+GC	GC	0	Human	Animal
+GG	CC	-0.836038146227204	Human	Animal
+GT	AC	0.196131619294728	Human	Animal
+TA	TA	0	Human	Animal
+TC	GA	0.893584778582253	Human	Animal
+TG	CA	0.323279130508046	Human	Animal
+TT	AA	0.837243928736458	Human	Animal
+AA	TT	-0.786117890935839	Sea Urchin	Animal
+AC	GT	-0.276174877157616	Sea Urchin	Animal
+AG	CT	-0.955174995320981	Sea Urchin	Animal
+AT	AT	0	Sea Urchin	Animal
+CA	TG	-0.231182554963507	Sea Urchin	Animal
+CC	GG	0.805433186490455	Sea Urchin	Animal
+CG	CG	0	Sea Urchin	Animal
+CT	AG	0.955174995320981	Sea Urchin	Animal
+GA	TC	-0.715793470007593	Sea Urchin	Animal
+GC	GC	0	Sea Urchin	Animal
+GG	CC	-0.805433186490455	Sea Urchin	Animal
+GT	AC	0.276174877157616	Sea Urchin	Animal
+TA	TA	0	Sea Urchin	Animal
+TC	GA	0.715793470007593	Sea Urchin	Animal
+TG	CA	0.231182554963507	Sea Urchin	Animal
+TT	AA	0.786117890935839	Sea Urchin	Animal
+AA	TT	-0.767918088737201	C. elegans	Animal
+AC	GT	-0.507249197236548	C. elegans	Animal
+AG	CT	-0.671365842385024	C. elegans	Animal
+AT	AT	0	C. elegans	Animal
+CA	TG	-0.264809590973202	C. elegans	Animal
+CC	GG	0.156424581005587	C. elegans	Animal
+CG	CG	0	C. elegans	Animal
+CT	AG	0.671365842385024	C. elegans	Animal
+GA	TC	-0.417456158032655	C. elegans	Animal
+GC	GC	0	C. elegans	Animal
+GG	CC	-0.156424581005587	C. elegans	Animal
+GT	AC	0.507249197236548	C. elegans	Animal
+TA	TA	0	C. elegans	Animal
+TC	GA	0.417456158032655	C. elegans	Animal
+TG	CA	0.264809590973202	C. elegans	Animal
+TT	AA	0.767918088737201	C. elegans	Animal
+AA	TT	-0.63603338074267	Rice	Plant
+AC	GT	-0.387817038803382	Rice	Plant
+AG	CT	-0.891402714932127	Rice	Plant
+AT	AT	0	Rice	Plant
+CA	TG	-0.428518768814892	Rice	Plant
+CC	GG	0.121600653327889	Rice	Plant
+CG	CG	0	Rice	Plant
+CT	AG	0.891402714932127	Rice	Plant
+GA	TC	-0.440103839551145	Rice	Plant
+GC	GC	0	Rice	Plant
+GG	CC	-0.121600653327889	Rice	Plant
+GT	AC	0.387817038803382	Rice	Plant
+TA	TA	0	Rice	Plant
+TC	GA	0.440103839551145	Rice	Plant
+TG	CA	0.428518768814892	Rice	Plant
+TT	AA	0.63603338074267	Rice	Plant
+AA	TT	-0.621757975811666	Arabidopsis	Plant
+AC	GT	-0.494095349176265	Arabidopsis	Plant
+AG	CT	-0.843641785302039	Arabidopsis	Plant
+AT	AT	0	Arabidopsis	Plant
+CA	TG	-0.55479799402716	Arabidopsis	Plant
+CC	GG	-0.191181919229344	Arabidopsis	Plant
+CG	CG	0	Arabidopsis	Plant
+CT	AG	0.843641785302039	Arabidopsis	Plant
+GA	TC	-0.331533497291	Arabidopsis	Plant
+GC	GC	0	Arabidopsis	Plant
+GG	CC	0.191181919229344	Arabidopsis	Plant
+GT	AC	0.494095349176265	Arabidopsis	Plant
+TA	TA	0	Arabidopsis	Plant
+TC	GA	0.331533497291	Arabidopsis	Plant
+TG	CA	0.55479799402716	Arabidopsis	Plant
+TT	AA	0.621757975811666	Arabidopsis	Plant
+AA	TT	-0.559693882602196	Moss	Plant
+AC	GT	-0.479867267594473	Moss	Plant
+AG	CT	-0.654172759691116	Moss	Plant
+AT	AT	0	Moss	Plant
+CA	TG	-0.560464003517529	Moss	Plant
+CC	GG	-0.32689646874812	Moss	Plant
+CG	CG	0	Moss	Plant
+CT	AG	0.654172759691116	Moss	Plant
+GA	TC	-0.0987208920957691	Moss	Plant
+GC	GC	0	Moss	Plant
+GG	CC	0.32689646874812	Moss	Plant
+GT	AC	0.479867267594473	Moss	Plant
+TA	TA	0	Moss	Plant
+TC	GA	0.0987208920957691	Moss	Plant
+TG	CA	0.560464003517529	Moss	Plant
+TT	AA	0.559693882602196	Moss	Plant
+AA	TT	-0.548165137614679	S. cerevisiae	Fungi
+AC	GT	0.104761904761905	S. cerevisiae	Fungi
+AG	CT	-0.705882352941177	S. cerevisiae	Fungi
+AT	AT	0	S. cerevisiae	Fungi
+CA	TG	-0.0193050193050193	S. cerevisiae	Fungi
+CC	GG	0.552941176470588	S. cerevisiae	Fungi
+CG	CG	0	S. cerevisiae	Fungi
+CT	AG	0.705882352941177	S. cerevisiae	Fungi
+GA	TC	-0.360995850622407	S. cerevisiae	Fungi
+GC	GC	0	S. cerevisiae	Fungi
+GG	CC	-0.552941176470588	S. cerevisiae	Fungi
+GT	AC	-0.104761904761905	S. cerevisiae	Fungi
+TA	TA	0	S. cerevisiae	Fungi
+TC	GA	0.360995850622407	S. cerevisiae	Fungi
+TG	CA	0.0193050193050193	S. cerevisiae	Fungi
+TT	AA	0.548165137614679	S. cerevisiae	Fungi
+AA	TT	-0.0888888888888889	L. thermotolerans	Fungi
+AC	GT	0.423611111111111	L. thermotolerans	Fungi
+AG	CT	-0.611336032388664	L. thermotolerans	Fungi
+AT	AT	0	L. thermotolerans	Fungi
+CA	TG	0.266968325791855	L. thermotolerans	Fungi
+CC	GG	0.6	L. thermotolerans	Fungi
+CG	CG	0	L. thermotolerans	Fungi
+CT	AG	0.611336032388664	L. thermotolerans	Fungi
+GA	TC	-0.437185929648241	L. thermotolerans	Fungi
+GC	GC	0	L. thermotolerans	Fungi
+GG	CC	-0.6	L. thermotolerans	Fungi
+GT	AC	-0.423611111111111	L. thermotolerans	Fungi
+TA	TA	0	L. thermotolerans	Fungi
+TC	GA	0.437185929648241	L. thermotolerans	Fungi
+TG	CA	-0.266968325791855	L. thermotolerans	Fungi
+TT	AA	0.0888888888888889	L. thermotolerans	Fungi
