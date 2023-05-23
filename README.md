@@ -6,7 +6,7 @@ evolution of the polypyrimidine tract. Preprint at https://www.biorxiv.org/conte
 ----
 The files in the repository is arranged as follows: 
 
-Sample_alignments/
+Sample_alignment/
 
 The final, filtered population data of *D. melanogaster* and *D. simulans*
 
