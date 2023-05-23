@@ -3,6 +3,7 @@ This repository contains the data and scripts necessary to replicate the final r
 Yildirim B. and Vogl, C. (2023). Joint action of purifying selection and trans-splicing factor preference on base composition
 evolution of the polypyrimidine tract. Preprint at https://www.biorxiv.org/content/10.1101/2022.01.29.478184v2.
 
+----
 The files in the repository is arranged as follows: 
 
 Sample_alignments/
