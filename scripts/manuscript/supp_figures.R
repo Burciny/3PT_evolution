@@ -1,4 +1,4 @@
-setwd("~/Documents/Project/3prime_ms/JEB/Repository/scripts/manuscript/")
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 library(readr)
 library(gtools)
