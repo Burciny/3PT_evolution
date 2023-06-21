@@ -1,4 +1,3 @@
-setwd("~/Documents/Project/3prime_ms/JEB/Repository/scripts/functions/")
 
 
 eigenSystem <- function(mP) {
