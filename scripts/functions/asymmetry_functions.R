@@ -1,3 +1,4 @@
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 complements <- read_delim("../../data/complements",
                           "\t", escape_double = FALSE, col_names = FALSE,
