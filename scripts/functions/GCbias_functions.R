@@ -49,7 +49,7 @@ spectra6_build<- function(df,M) {
 }
 
 ### Log likelihood functions to infer B (strength of gBGC) from site frequency spectrum
-logl<- function(B, data, c=3) {
+logl<- function(B, data, c=0) {
   M=nrow(data)-1
   y=((1+c):(M-1-c))
   C=nrow(data[(2+c):(M-c),2])
@@ -64,7 +64,7 @@ logl<- function(B, data, c=3) {
   return(-logl)
 }
 
-logl_neutral<- function(B, data, c=3) {
+logl_neutral<- function(B, data, c=0) {
   M=nrow(data)-1
   y=((1+c):(M-1-c))
   C=nrow(data[(2+c):(M-c),1])
@@ -79,7 +79,7 @@ logl_neutral<- function(B, data, c=3) {
   return(-logl)
 }
 
-dflogl<- function(B, data, c=3) {
+dflogl<- function(B, data, c=0) {
   M=nrow(data)-1
   y=((1+c):(M-1-c))
   C=nrow(data[(2+c):(M-c),2])
@@ -93,7 +93,7 @@ dflogl<- function(B, data, c=3) {
   return(-dflogl)
 }
 
-ll_fun<- function(B, data, c=3, s=1) {
+ll_fun<- function(B, data, c=0, s=1) {
   M=nrow(data)-1
   y=((1+c):(M-1-c))
   C=nrow(data[(2+c):(M-c),2])
