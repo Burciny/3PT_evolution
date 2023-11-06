@@ -1,6 +1,7 @@
 This repository contains the data and scripts necessary to replicate the final results in the paper:
 
-Yildirim B. and Vogl, C. (2023). Purifying selection against spurious splicing signals contributes to the base composition evolution of the polypyrimidine tract. Preprint at https://www.biorxiv.org/content/10.1101/2022.01.29.478184v3.
+Yıldırım, B. and Vogl, C. (2023b). Purifying selection against spurious splicing signals contributes
+to the base composition evolution of the polypyrimidine tract. Journal of Evolutionary Biology, 36(9):1295–1312.
 
 ----
 The files in the repository are organized in the following manner: 
